@@ -1,0 +1,12 @@
+<div class="container">
+    <div class="header">Simple Weather <input class="search" type="text" placeholder="Enter City Name" (keyup.enter)="setCity($event)"></div>   
+    <ul>
+        <li class="city" *ngFor="let city of cities">
+            <app-tab-header [DisplayName]="city" [selected]="city == selectedCity"
+                (OnHeaderSelected)="OnHeaderSelected($event)"></app-tab-header>
+        </li>
+    </ul>
+    <div class="content">
+        <app-tab-content [foreCastData]="foreCastData" [dayForecastData]="dayForecastData"></app-tab-content>
+    </div>
+</div>
